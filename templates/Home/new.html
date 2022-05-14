@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+    
+    {% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>This is a secondary page</h1>
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aut distinctio maxime
+                     eos debitis voluptas, dolor fugit in perferendis libero.</p>
+            </div>
+        </div>
+
+        <a href="{% url 'home' %}">Go to home</a>
+
+    </div>
+    {%endblock %}
