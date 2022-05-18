@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for product in products %}
+<h3> {{ product.name }}   -    {{ product.price }}  <a href="{% url 'remove_from_cart' product.id %}">   remove </a> </h3>
+{% endfor %}
+
+Total price: {{ totalPrice }}
+
+{% endblock content %}
