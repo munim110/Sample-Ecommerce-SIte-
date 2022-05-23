@@ -6,6 +6,8 @@
 <h3> {{ product.name }}   -    {{ product.price }}  <a href="{% url 'remove_from_cart' product.id %}">   remove </a> </h3>
 {% endfor %}
 
-Total price: {{ totalPrice }}
+Total price: {{ totalPrice }} <br><br>
+
+<a href="{% url 'order' %}"> Checkout </a>
 
 {% endblock content %}

@@ -2,6 +2,7 @@
 {% block content %}
 <h1>Welcome to Goriber Amazon </h1>
 <p>Get exciting deals everyday with Goriber Amazon </p> 
+<p> <a href="{% url 'viewcart' user.id %}"> Your Cart </a> </p>
 <p> <a href="{% url 'logout' %}"> Logout </a> </p>
 {% for product in all_products %}
 <a href="{% url 'product' product.id %}"> <h2 align="center" >{{ product.name }}</a></h2> 

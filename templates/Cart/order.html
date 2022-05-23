@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for product in all_products %}
+<h3> {{ product.name }}   -    {{ product.price }} </h3>
+{% endfor %}
+
+Total price: {{ cart.totalPrice }}
+
+<form action="#" method="post">
+{% csrf_token %}
+<input type="text" name="shipping_address" placeholder="Shipping address"> <br><br>
+<input type="text" name="zip_code" placeholder="Zip code"><br><br>
+<input type="text" name="shipping_city" placeholder="City"><br><br>
+<input type="text" name="shipping_district" placeholder="District"><br><br>
+<input type="text" name="shipping_division" placeholder="Division"><br><br>
+<input type="text" name="phone_number" placeholder="Phone"><br><br>
+
+    <input type="submit" value="Checkout">
+
+{% endblock content %}
