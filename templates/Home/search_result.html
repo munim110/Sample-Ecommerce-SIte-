@@ -1,13 +1,6 @@
 {% extends "base.html" %}    
 {% block content %}
-<h1>Welcome to Goriber Amazon </h1>
-<p>Get exciting deals everyday with Goriber Amazon </p> 
-<p> <a href="{% url 'viewcart' user.id %}"> Your Cart </a> </p>
-<p> <a href="{% url 'logout' %}"> Logout </a> </p>
-<form action="#" method="post">
-{% csrf_token %}
-<input type="text" name="search" placeholder="Search for a product">
-<input type="submit" value="Search">
+<h1> Search Result </h1>
 {% for product in all_products %}
 <a href="{% url 'product' product.id %}"> <h2 align="center" >{{ product.name }}</a></h2> 
 <p align="center">{{ product.description }}</p>

@@ -11,10 +11,21 @@ from Product.models import *
 
 def home(request):
     if request.user.is_authenticated:
-        all_products = Product.objects.all()
-        return render(request, 'Home/home.html', {'all_products': all_products})
+        if request.method == 'POST':
+            string = request.POST.get('search')
+            return redirect(search_view, string=string)
+        else:
+            all_products = Product.objects.all()
+            return render(request, 'Home/home.html', {'all_products': all_products})
     else:
         return redirect(signin)
+
+def search_view(request,string):
+    if string is not None and string != '':
+        all_products = Product.objects.filter(name__contains=string)
+    else:
+        all_products = Product.objects.all()
+    return render(request, 'Home/search_result.html', {'all_products': all_products})
 
 def signin(request):
     logout(request.user) if request.user.is_authenticated else None

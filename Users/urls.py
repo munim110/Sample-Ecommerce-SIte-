@@ -9,4 +9,5 @@ urlpatterns = [
     path('editinfo/',views.editinfo, name='editinfo'),
     path('changepassword/',views.changepassword, name='changepassword'),
     path('',views.home, name='home'),
+    path('search/<str:string>',views.search_view, name='search_view'),
 ]
